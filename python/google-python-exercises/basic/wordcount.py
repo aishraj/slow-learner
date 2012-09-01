@@ -45,7 +45,34 @@ import sys
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
-###
+def build_wordcount_dict(filename):
+  freqpair = {}
+  wordfile = open(filename,'rU')
+  for line in wordfile:
+    words = line.split()
+    for word in words:
+      word = word.lower()
+      if word in freqpair:
+        freqpair[word] = freqpair[word] + 1
+      else:
+        freqpair[word] = 1
+  wordfile.close()
+  return freqpair
+
+def print_words(filename):
+  worddict = build_wordcount_dict(filename)
+  words = sorted(worddict.keys())
+  for word in words:
+    print word, worddict[word]
+
+def get_freq(wordcount_tup):
+  return wordcount_tup[-1]
+
+def print_top(filename):
+  word_dict = build_wordcount_dict(filename)
+  items = sorted(word_dict.items(), key = get_freq, reverse = True)
+  for item in items[:20]:
+    print item[0], item[1]
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
