@@ -30,5 +30,6 @@ for i in range(len(tweets["results"])):
     status = twitter.Api.GetStatus(api, tweets["results"][i]["id"])
     api.CreateFavorite(status)
     api.CreateFriendship(tweeter)
+    """TODO: Need to add a uniquie string perhaps an MD5 hash to each tweet to bypass duplicate  tweet detection"""
     api.PostUpdate('@' + tweeter + ' ' + msg)
 
