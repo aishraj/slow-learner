@@ -1,7 +1,7 @@
 """
 
 This is the source code of a bare bone Twitter Bot that uses the Twitter Python Library.
-It finds users who tweeted about "Dell Social Innovation Challenge", favourites their tweets,
+It finds out theusers who tweeted about "Dell Social Innovation Challenge", favourites their tweets,
 follows them and then sends them a tweet with a link to Project Code - an initiative to teach kids
 programming at an early age.
 
