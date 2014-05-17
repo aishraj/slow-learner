@@ -34,5 +34,7 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet{
 }
 
 object insets {
-  val e = Empty
+  def e = Empty
+  e contains 1
+
 }
