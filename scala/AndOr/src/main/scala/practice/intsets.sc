@@ -1,6 +1,6 @@
-object insets {
-  val e = Empty
-}
+package practice
+
+
 abstract class IntSet{
   def incl(x: Int): IntSet         // include element x in the IntSet
   def contains(x: Int): Boolean    // is x an element of the set?
@@ -31,4 +31,8 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet{
   def union(other:IntSet): IntSet =
     ((left union right) union other) incl elem
 
+}
+
+object insets {
+  val e = Empty
 }
